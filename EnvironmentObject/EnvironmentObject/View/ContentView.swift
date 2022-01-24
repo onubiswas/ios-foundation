@@ -24,9 +24,9 @@ struct ContentView: View {
                 Text("Preferences:")
                     .font(.title)
                 Toggle("show name:", isOn: $model.name)
-                Toggle("show address:", isOn: $model.name)
-                Toggle("show company:", isOn: $model.name)
-                Toggle("show yearsOfExperience:", isOn: $model.name)
+                Toggle("show address:", isOn: $model.address)
+                Toggle("show company:", isOn: $model.company)
+                Toggle("show yearsOfExperience:", isOn: $model.years)
             }
             .tabItem{Image(systemName: "gearshape")}
             .padding()

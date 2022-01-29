@@ -8,9 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var cardColor: Color{
+        return Color(
+            .sRGB,
+            red: Double.random(in: 0..<1),
+            green: Double.random(in: 0..<1),
+            blue: Double.random(in: 0..<1),
+            opacity: 1
+        )
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView{
+            ForEach(1..<51){ index in
+                GeometryReader { geometry in
+                    ZStack{
+                        Rectangle()
+                            .foregroundColor(cardColor)
+                            .cornerRadius(20)
+                            .shadow( radius: 10)
+                        Image(systemName: "\(index).circle")
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                    }
+                    .frame( height: max(geometry.size.height-50, 100))
+                }
+                .padding()
+            }
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 

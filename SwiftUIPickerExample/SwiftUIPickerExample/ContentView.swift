@@ -20,7 +20,8 @@ struct ContentView: View {
                     Text("Option 2").tag(2)
                     Text("Option 3").tag(3)
                 }
-                .pickerStyle(MenuPickerStyle())
+                .pickerStyle(WheelPickerStyle())
+                //.pickerStyle(MenuPickerStyle())
                 //  .pickerStyle(SegmentedPickerStyle())
                  
                 Text("You've selected: \(selectedIndex)")
